@@ -1,0 +1,55 @@
+<div class="page-container">
+    <header *ngIf="authService.token != ''">
+      <div>
+       
+        <button mat-button class="menu-button" (click)="sidenav.toggle()">
+            <mat-icon>{{ isMenuOpen ? 'menu_open' : 'menu' }}</mat-icon>
+          </button>
+    
+        <a routerLink="/">
+          <span class="app-title">Menu</span>
+        </a>
+     
+      </div>
+      <div class="loguin">
+        <span class="nav-tool-items">
+            <a mat-button [routerLink]="['/Acceso']" routerLinkActive="active">Acceso</a>
+          </span>
+      </div>
+    </header>
+  
+<mat-sidenav-container class="sidenav-container">
+	
+    <mat-sidenav #sidenav autoFocus="false" mode="over" [(opened)]="isMenuOpen" class="sidenav" >
+          <mat-nav-list>
+			<mat-list-item (click)="showSubmenuEG = !showSubmenuEG" class="parent">
+				<span class="full-width" *ngIf="isExpanded || isShowing">Estructura General</span>
+				<mat-icon mat-list-icon>home</mat-icon>
+				<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenuEG}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+			</mat-list-item>
+			<div class="submenu" [ngClass]="{'expanded' : showSubmenuEG}" *ngIf="isShowing || isExpanded">
+				<a mat-list-item href="...">Ubicación</a>
+				<a mat-list-item [routerLink]="['/Departamento']"  (click)="cerrarMenu()">Departamento</a>
+				<a mat-list-item href="...">Puesto</a>
+			</div>
+		  
+			<mat-list-item (click)="showSubmenuPP = !showSubmenuPP" class="parent">
+				<span class="full-width" *ngIf="isExpanded || isShowing">Portal Personal</span>
+				<mat-icon mat-list-icon>home</mat-icon>
+				<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenuPP}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+			</mat-list-item>
+			<div class="submenu" [ngClass]="{'expanded' : showSubmenuPP}" *ngIf="isShowing || isExpanded">
+				<a mat-list-item href="...">Ubicación</a>
+				<a mat-list-item href="...">Departamento</a>
+				<a mat-list-item href="...">Puesto</a>
+				<a mat-list-item href="...">hola</a>
+			</div>
+		  </mat-nav-list>
+    </mat-sidenav>
+       <mat-sidenav-content>
+          <main>
+            <router-outlet></router-outlet>
+          </main>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>

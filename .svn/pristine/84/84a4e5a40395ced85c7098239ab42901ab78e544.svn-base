@@ -1,0 +1,76 @@
+import { Component, OnInit,ViewChild } from '@angular/core';
+import { AuthService } from '../compartido/servicios/auth.service';
+import { MatSidenav } from '@angular/material/sidenav';
+
+
+@Component({
+  selector: 'app-principal',
+  templateUrl: './principal.component.html',
+  styleUrls: ['./principal.component.scss']
+})
+export class PrincipalComponent implements OnInit {
+  
+
+  constructor(public authService: AuthService) { }
+
+  currentDate = new Date();
+
+  tipos = [
+    {valor: 'injustificada', id: 1},
+    {valor: 'tardia', id: 2},
+    {valor: 'justificada', id: 3},
+  ];
+
+  fechaInicio = new Date('3/1/2021');
+  fechaFinal = new Date('3/16/2021');
+
+  public isMenuOpen: boolean = false;
+  @ViewChild('sidenav') sidenav: MatSidenav;
+  sub: any=null;
+
+  isExpanded = true;
+  showSubmenuPP: boolean = false;
+  showSubmenuEG: boolean = false;
+  isShowing = false;
+    
+  showSubSubMenu: boolean = false;
+
+  ngOnInit(): void {
+    
+  }
+
+ 
+
+  pruebaSeleccion(e){
+    console.log("principal");
+    console.log(e);
+  }
+
+   
+  public onSidenavClick(): void {
+    this.isMenuOpen = false;
+  }
+  
+  cerrarMenu(){
+   // this.menuService.isMenuOpen = this.isMenuOpen;
+   // this.menuService.subject.next(true);
+   this.showSubmenuEG =false;
+   this.sidenav.toggle();
+
+  }
+
+  
+  mouseenter() {
+    if (!this.isExpanded) {
+      this.isShowing = true;
+      this.isMenuOpen =true;
+    }
+  }
+
+  mouseleave() {
+    if (!this.isExpanded) {
+      this.isShowing = false;
+    }
+  }
+
+}

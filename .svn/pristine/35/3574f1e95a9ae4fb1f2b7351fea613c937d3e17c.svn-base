@@ -1,0 +1,14 @@
+<form class="example-form">
+    <app-text-input [label]="'Nombre'"[valor]="'Nombre'" [placeHolder]="'Nombre'"></app-text-input>
+
+
+    <app-boton nombre="Agregar" (accion)="prueba()" estilo = "primary"></app-boton>
+
+
+    <button mat-raised-button color="primary" (click)="agregar()">Prueba Servicio</button>
+
+     <app-select [descripcionSelect]="'valor'" [valorSeleccionado]="" [valorBusqueda] = "'valor'" [placeHolder]= "'Selección'"  [multipleSeleccion] ="false" [datos] = "tipos" (accion) = "pruebaSeleccion($event)" [estado] ="false"  >
+
+  </app-select>
+
+</form>

@@ -1,0 +1,23 @@
+<section class="example-section">
+    <span class="example-list-section">
+      <mat-checkbox class="example-margin"
+                    [checked]="allComplete"
+                    [color]="task.color"
+                    [indeterminate]="someComplete()"
+                    [disabled]="estado"
+                    (change)="setAll($event.checked)">
+        {{task.name}}
+      </mat-checkbox>
+    </span>
+    <span class="example-list-section">
+      <ul>
+        <li *ngFor="let subcheck of task.subtasks">
+          <mat-checkbox [(ngModel)]="subcheck.completed"
+                        [color]="subcheck.color"
+                        (ngModelChange)="updateAllComplete()">
+            {{subcheck.name}}
+          </mat-checkbox>
+        </li>
+      </ul>
+    </span>
+  </section>

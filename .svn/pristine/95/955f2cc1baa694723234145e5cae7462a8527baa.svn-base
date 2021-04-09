@@ -1,0 +1,42 @@
+import { Component,EventEmitter,Input, OnInit, Output } from '@angular/core';
+
+
+
+@Component({
+  selector: 'app-toogle',
+  templateUrl: './toogle.component.html',
+  styleUrls: ['./toogle.component.scss']
+})
+export class ToogleComponent implements OnInit {
+
+  constructor() { }
+
+  @Input() valorSeleccionado : any;
+  @Input() valorBusqueda : string = '';
+  @Input() nombre: String = '';
+  @Input() opcion1=false;
+
+
+  @Output() accion = new EventEmitter();
+
+ 
+  
+
+//Definición 
+  config = {
+    searchPlaceholder:'Buscar', 
+    searchOnKey: ''
+  }
+
+  ngOnInit(): void {
+   
+  }
+
+
+
+  selectionChanged(e){
+    this.accion.emit(this.valorSeleccionado);
+  }
+
+
+}

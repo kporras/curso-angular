@@ -1,0 +1,31 @@
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
+
+@Component({
+  selector: 'app-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.scss']
+})
+export class MenuComponent implements OnInit {
+
+  @ViewChild('sidenav') sidenav: MatSidenav;
+  public isMenuOpen: boolean = false;
+  isExpanded = true;
+  showSubmenuPP: boolean = false;
+  showSubmenuEG: boolean = false;
+  isShowing = false;
+
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+  public onSidenavClick(): void {
+    this.isMenuOpen = false;
+  }
+
+
+
+
+}

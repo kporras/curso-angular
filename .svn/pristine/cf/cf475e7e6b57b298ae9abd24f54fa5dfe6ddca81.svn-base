@@ -1,0 +1,6 @@
+<ngx-select-dropdown [config]="config" [options]="datos" 
+            [multiple]="multipleSeleccion" (change)="selectionChanged($event)" [disabled] = "estado"  [(ngModel)]="valorSeleccionado" ></ngx-select-dropdown>
+
+
+
+      

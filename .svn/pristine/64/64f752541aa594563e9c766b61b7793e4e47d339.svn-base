@@ -1,0 +1,19 @@
+import { Component, OnInit } from '@angular/core';
+import { DepartamentoService } from 'src/app/compartido/servicios/estructuraGeneral/departamento/departamento.service';
+
+@Component({
+  selector: 'app-departamento',
+  templateUrl: './departamento.component.html',
+  styleUrls: ['./departamento.component.scss']
+})
+export class DepartamentoComponent implements OnInit {
+
+  constructor(private departamentoService : DepartamentoService) { }
+
+  ngOnInit(): void {
+    console.log("kim");
+   console.log( this.departamentoService.get());
+  }
+
+
+}

@@ -1,0 +1,25 @@
+<form class="example-form">
+    <app-text-input [label]="'Nombre'" [valor]="'Nombre'" [estado]="false" [placeHolder]="'Nombre'" [requerido]="true" [tipo]="'number'"></app-text-input>
+
+
+    <app-boton nombre="Agregar" (accion)="prueba()" estado="false" estilo="primary"></app-boton>
+
+
+    <button mat-raised-button color="primary" (click)="agregar()">Prueba Servicio</button>
+
+    <app-select [descripcionSelect]="'valor'" [valorSeleccionado]="" [valorBusqueda]="'valor'" [placeHolder]="'Selección'" [multipleSeleccion]="false" [datos]="tipos" (accion)="pruebaSeleccion($event)" [estado]="true">
+
+    </app-select>
+
+
+    <app-toogle (accion)="pruebaSeleccion($event)" nombre="Prueba" disabled="true"></app-toogle>
+
+
+    <div class="contenedor">
+        <app-radio-button [opciones]="opciones" requerido="false" estado="false" (accion)="pruebaSeleccion($event)" color="primary"></app-radio-button>
+
+    </div>
+
+    <!-- <app-table> </app-table> -->
+
+</form>

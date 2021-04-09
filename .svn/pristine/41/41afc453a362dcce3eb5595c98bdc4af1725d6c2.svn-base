@@ -1,0 +1,69 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//MODULOS
+import { AppRoutingModule } from './app-routing.module';
+import { AppUiModule } from './app-ui.module';
+
+//SERVICIOS
+import { DatosService } from './compartido/servicios/datos.service';
+import { AuthService } from './compartido/servicios/auth.service';
+
+
+
+
+//COMPONENTES
+import { AppComponent } from './app.component';
+import { PrincipalComponent } from './principal/principal.component';
+import { AccesoComponent } from './acceso/acceso.component';
+import { TextInputComponent } from './compartido/controles/text-input/text-input.component';
+import { BotonComponent } from './compartido/controles/boton/boton.component';
+import { CalendarioComponent } from './compartido/controles/calendario/calendario.component'
+import { SelectComponent } from './compartido/controles/select/select.component';
+import { ToogleComponent } from './compartido/controles/toogle/toogle.component';
+import { CheckboxComponent } from './compartido/controles/checkbox/checkbox.component';
+import { CalendarioRangoFechasComponent } from './compartido/controles/calendario-rango-fechas/calendario-rango-fechas.component';
+import { RadioButtonComponent } from './compartido/controles/radio-button/radio-button.component';
+import { MenuComponent } from './menu/menu.component';
+
+
+import { SelectDropDownModule } from 'ngx-select-dropdown';
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    PrincipalComponent,
+    AccesoComponent,
+    TextInputComponent,
+    BotonComponent,
+    CalendarioComponent,
+    SelectComponent,
+    ToogleComponent,
+    CheckboxComponent,
+    CalendarioRangoFechasComponent,
+    RadioButtonComponent,
+    MenuComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    SelectDropDownModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppUiModule
+    
+  ],
+  providers: [
+    DatosService,
+    AuthService
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

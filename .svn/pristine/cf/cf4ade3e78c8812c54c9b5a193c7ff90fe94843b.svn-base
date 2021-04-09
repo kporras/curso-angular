@@ -1,0 +1,5 @@
+<mat-radio-group name="opciones" [(ngModel)]="OpcionSeleccionada">
+    <mat-radio-button *ngFor="let op of Opciones" [disabled]="estado" [required]="requerido">
+        {{op.valor}}
+    </mat-radio-button>
+</mat-radio-group>

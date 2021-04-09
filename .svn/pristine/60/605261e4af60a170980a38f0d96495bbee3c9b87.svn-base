@@ -1,0 +1,12 @@
+<p>principal works!</p>
+{{authService.nombre}}
+
+<app-calendario-rango-fechas [estado]="false" (accion)="pruebaSeleccion($event)" [valorFechaInicio] = "fechaInicio"  [valorFechaFin] = "fechaFinal"></app-calendario-rango-fechas>
+
+<hr>
+
+<app-calendario [estado]="false" [valorFecha]="" (accion)="pruebaSeleccion($event)"></app-calendario>
+
+<hr>
+
+<app-checkbox [label]="'Nombre'"[valor]="'Nombre'" [estado] = "false" [requerido]="true" ></app-checkbox>

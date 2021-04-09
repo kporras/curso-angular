@@ -1,0 +1,41 @@
+
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center" >
+
+    <mat-card class="box">
+      <mat-card-header class="header">
+        <mat-card-title>Bienvenido  </mat-card-title>
+      </mat-card-header>
+  
+      <form class="example-form">
+        <mat-card fxLayout="column" fxLayoutGap="20px">
+          <mat-card class="child-1">
+            <mat-form-field appearance="standard" class="formatoInput">
+              <mat-label>Usuario</mat-label>
+              <input matInput [(ngModel)]="usuario"   name="usuario" required>
+              <mat-icon matSuffix>face</mat-icon>
+            </mat-form-field>
+          </mat-card> 
+          <mat-card class="child-2">
+          
+            <mat-form-field appearance="fill"  class="formatoInput">
+              <mat-label>Contraseña</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'"  placeholder="*******" [(ngModel)]="contrasenna" name="contrasenna" required>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+
+              </button>
+            </mat-form-field>
+          </mat-card> 
+        
+
+          <mat-card class="child-3">
+            <button mat-stroked-button (click)="acceso()"  class="btn-block">Log in</button>
+          </mat-card>
+      </mat-card>
+    </form>
+  </mat-card>
+</div>
+
+
+
+  

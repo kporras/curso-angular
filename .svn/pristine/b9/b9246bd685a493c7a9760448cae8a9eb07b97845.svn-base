@@ -1,0 +1,29 @@
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../compartido/servicios/auth.service';
+
+@Component({
+  selector: 'app-principal',
+  templateUrl: './principal.component.html',
+  styleUrls: ['./principal.component.scss']
+})
+export class PrincipalComponent implements OnInit {
+
+  currentDate = new Date();
+
+  tipos = [
+    {valor: 'injustificada', id: 1},
+    {valor: 'tardia', id: 2},
+    {valor: 'justificada', id: 3},
+  ];
+
+
+  constructor(public authService: AuthService) { }
+
+  ngOnInit(): void {
+  }
+
+  pruebaSeleccion(e){
+    console.log(e);
+  }
+
+}
